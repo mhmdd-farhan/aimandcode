@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node node_modules/.bin/vite --port 5173",
+    "build": "node node_modules/vite/bin/vite.js build",
     "server": "node node_modules/.bin/json-server --watch db.json --port 3000",
     "start": "echo 'Run: node node_modules/.bin/vite --port 5173'"
   },
