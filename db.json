@@ -1,0 +1,408 @@
+{
+  "challenges": [
+    {
+      "id": 1,
+      "title": "Volume Gravitasi Newton",
+      "explanation": "Bos minta volume dikecilin, tapi dia penganut bumi datar. Bikin slider volume ini jatuh melorot ke angka 0 kalau mouse dilepas.\n\nDOM Elements:\n- `<input type='range' id='vol-slider'>` — slider volume (value default: 50, min:0, max:100)",
+      "html_blueprint": "<div class='sandbox-container'><label>Volume</label><input type='range' min='0' max='100' value='50' id='vol-slider'></div>",
+      "initial_code": "function startChallenge() {\n  const slider = document.getElementById('vol-slider');\n  // Tambahin gravitasi di sini bang\n}",
+      "test_cases": [{"check_logic": "document.getElementById('vol-slider').value == 0", "error_msg": "Test Failed: Slider lu melayang bang, Isaac Newton nangis di kuburan.", "success_msg": "Test 1 Pass: Gravitasi terdeteksi, volume sukses nyungsep."}]
+    },
+    {
+      "id": 2,
+      "title": "Checkbox Penakut",
+      "explanation": "User kita punya trust issue. Bikin checkbox 'I Agree' lari random menjauh sejauh 100px setiap kali dideketin kursor.\n\nDOM Elements:\n- `<input type='checkbox' id='agree'>` — checkbox I Agree (position: absolute, top:50px, left:50px)\n- Container: `<div class='sandbox-container' style='position:relative; height:200px;'>`",
+      "html_blueprint": "<div class='sandbox-container' style='position:relative; height:200px;'><input type='checkbox' id='agree' style='position:absolute; top:50px; left:50px;'> I Agree</div>",
+      "initial_code": "function startChallenge() {\n  const checkbox = document.getElementById('agree');\n  // Bikin dia lari ketakutan\n}",
+      "test_cases": [{"check_logic": "checkbox_position_changed_on_hover", "error_msg": "Test Failed: Tombol lu pasrah banget bang, ga lari.", "success_msg": "Test 1 Pass: Checkbox berhasil kabur."}]
+    },
+    {
+      "id": 3,
+      "title": "Dark Mode Agresif",
+      "explanation": "CEO kita suka kegelapan. Bikin tombol Dark Mode yang pas diklik, ubah background jadi hitam pekat (#000000) DAN sembunyikan kursor mouse-nya.\n\nDOM Elements:\n- `<div id='bg-canvas'>` — container utama (ubah backgroundColor & cursor)\n- `<button id='dark-btn'>` — tombol trigger dark mode",
+      "html_blueprint": "<div class='sandbox-container' id='bg-canvas'><button id='dark-btn'>Nyalakan Kegelapan</button></div>",
+      "initial_code": "function startChallenge() {\n  // Gelapin semua\n}",
+      "test_cases": [{"check_logic": "document.getElementById('bg-canvas').style.backgroundColor === 'rgb(0, 0, 0)' && document.getElementById('bg-canvas').style.cursor === 'none'", "error_msg": "Test Failed: Kursornya masih kelihatan / kurang gelap bang!", "success_msg": "Test 1 Pass: Gelap gulita sempurna."}]
+    },
+    {
+      "id": 4,
+      "title": "Password Emoji",
+      "explanation": "Sistem login kita anti-mainstream. Blokir semua input ketikan di field password KECALI input berupa emoji.\n\nDOM Elements:\n- `<input type='password' id='pass-input'>` — field password (placeholder: 'Masukkan emoji...')",
+      "html_blueprint": "<div class='sandbox-container'><input type='password' id='pass-input' placeholder='Masukkan emoji...'></div>",
+      "initial_code": "function startChallenge() {\n  // Filter inputnya bang\n}",
+      "test_cases": [{"check_logic": "regex_emoji_only_pass", "error_msg": "Test Failed: Masih bisa ngetik huruf alfabet bang, ga aman!", "success_msg": "Test 1 Pass: Keamanan level dewa (emoji approved)."}]
+    },
+    {
+      "id": 5,
+      "title": "CAPTCHA Orang Sabar",
+      "explanation": "Bukannya milih gambar lampu lalu lintas, user harus ngeklik tombol 'Submit' sebanyak 99 kali. Tombol harus nampilin counter mundur dari 99 ke 0.\n\nDOM Elements:\n- `<button id='captcha-btn'>` — tombol submit (text awal: 'Submit (99)')",
+      "html_blueprint": "<div class='sandbox-container'><button id='captcha-btn'>Submit (99)</button></div>",
+      "initial_code": "function startChallenge() {\n  // Uji kesabaran user\n}",
+      "test_cases": [{"check_logic": "button_inner_text_decrements", "error_msg": "Test Failed: Angkanya ga ngurang bang, kasian jari usernya.", "success_msg": "Test 1 Pass: Berhasil menyiksa user."}]
+    },
+    {
+      "id": 6,
+      "title": "Slider DVD Screensaver",
+      "explanation": "Slider volume ini harus mantul-mantul ke ujung layar terus-menerus ala logo DVD jaman dulu.\n\nDOM Elements:\n- `<div id='dvd-box' style='position:relative; width:400px; height:300px;'>` — container bounding box\n- `<input type='range' id='dvd-slider' style='position:absolute;'>` — slider yang harus gerak otomatis",
+      "html_blueprint": "<div class='sandbox-container' id='dvd-box' style='position:relative; width:400px; height:300px;'><input type='range' id='dvd-slider' style='position:absolute;'></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin slidernya bounding box\n}",
+      "test_cases": [{"check_logic": "is_moving_automatically", "error_msg": "Test Failed: Slider lu mager, ga gerak sama sekali.", "success_msg": "Test Pass: Mantul abis!"}]
+    },
+    {
+      "id": 7,
+      "title": "Input Nomor HP Mancing",
+      "explanation": "Jangan pakai keyboard! User harus milih nomor HP dari dropdown yang isinya angka 0 sampai 9.999.999.999.\n\nDOM Elements:\n- `<select id='hp-dropdown'>` — dropdown select (harus diisi banyak option)",
+      "html_blueprint": "<div class='sandbox-container'><select id='hp-dropdown'></select></div>",
+      "initial_code": "function startChallenge() {\n  // Generate 10 milyar option pake loop\n}",
+      "test_cases": [{"check_logic": "has_too_many_options", "error_msg": "Test Failed: Optionnya kedikitan, user butuh nomor spesifik!", "success_msg": "Test Pass: Browser hampir crash, good job."}]
+    },
+    {
+      "id": 8,
+      "title": "Terms & Conditions nge-Troll",
+      "explanation": "Pas user scroll ke bawah buat baca T&C, otomatis scroll-nya ditarik ke atas lagi.\n\nDOM Elements:\n- `<div id='tnc-box' style='height:100px; overflow-y:scroll;'>` — container scrollable T&C\n- `<p style='height:500px;'>` — konten panjang di dalamnya",
+      "html_blueprint": "<div class='sandbox-container'><div id='tnc-box' style='height:100px; overflow-y:scroll;'><p style='height:500px;'>Syarat & Ketentuan panjang banget...</p></div></div>",
+      "initial_code": "function startChallenge() {\n  // Jangan biarkan mereka baca\n}",
+      "test_cases": [{"check_logic": "scrollTop_forces_to_zero", "error_msg": "Test Failed: User berhasil baca syaratnya, kita bisa dituntut!", "success_msg": "Test Pass: Keadilan buta, user juga."}]
+    },
+    {
+      "id": 9,
+      "title": "Tombol Submit Pemalu",
+      "explanation": "Makin lama kursor mouse ada di atas tombol Submit, ukuran tombolnya makin mengecil sampai hilang (width & height jadi 0).\n\nDOM Elements:\n- `<button id='shy-btn' style='width:100px; height:40px;'>` — tombol submit pemalu (harus di-shrink pas hover)",
+      "html_blueprint": "<div class='sandbox-container'><button id='shy-btn' style='width:100px; height:40px;'>Submit</button></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin tombolnya insecure\n}",
+      "test_cases": [{"check_logic": "button_shrinks_on_hover", "error_msg": "Test Failed: Tombolnya masih gede bang, kurang pemalu.", "success_msg": "Test Pass: Tombolnya sukses ngilang."}]
+    },
+    {
+      "id": 10,
+      "title": "Password Amnesia",
+      "explanation": "Setiap 3 detik, hapus 1 karakter terakhir dari input password. Biar user buru-buru ngetiknya.\n\nDOM Elements:\n- `<input type='password' id='amnesia-pass'>` — field password (harus dihapus 1 char tiap 3 detik pakai setInterval)",
+      "html_blueprint": "<div class='sandbox-container'><input type='password' id='amnesia-pass'></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin interval penghapus dosa\n}",
+      "test_cases": [{"check_logic": "password_length_decreases", "error_msg": "Test Failed: Passwordnya ga kehapus bang, kurang menantang.", "success_msg": "Test Pass: User sukses frustasi."}]
+    },
+    {
+      "id": 11,
+      "title": "Dropdown Naik",
+      "explanation": "Bikin elemen dropdown custom (bukan select asli) yang list-nya malah drop ke atas sampai nembus layar.\n\nDOM Elements:\n- `<button id='drop-btn'>` — tombol trigger dropdown\n- `<ul id='drop-list' style='display:none; position:absolute;'>` — list menu (harus muncul ke ATAS tombol)\n- `<li>Menu 1</li>`, `<li>Menu 2</li>` — isi dropdown",
+      "html_blueprint": "<div class='sandbox-container' style='margin-top:200px;'><button id='drop-btn'>Pilih Menu</button><ul id='drop-list' style='display:none; position:absolute;'><li>Menu 1</li><li>Menu 2</li></ul></div>",
+      "initial_code": "function startChallenge() {\n  // Lawan gravitasi UI\n}",
+      "test_cases": [{"check_logic": "list_appears_above_button", "error_msg": "Test Failed: Listnya masih ke bawah bang, terlalu normal.", "success_msg": "Test Pass: DropUp Menu berhasil."}]
+    },
+    {
+      "id": 12,
+      "title": "Warna Abu-Abu Kehidupan",
+      "explanation": "Input color picker ini kalau user pilih warna merah/kuning/dll, paksa warnanya balik jadi grayscale (abu-abu).\n\nDOM Elements:\n- `<input type='color' id='depressed-color'>` — color picker (tangkap event oninput, konversi ke grayscale)",
+      "html_blueprint": "<div class='sandbox-container'><input type='color' id='depressed-color'></div>",
+      "initial_code": "function startChallenge() {\n  // Hilangkan warna warni kehidupannya\n}",
+      "test_cases": [{"check_logic": "force_grayscale_hex", "error_msg": "Test Failed: Masih ada warna cerah bang, kurang suram.", "success_msg": "Test Pass: Welcome to the monochrome world."}]
+    },
+    {
+      "id": 13,
+      "title": "Progress Bar Mundur",
+      "explanation": "Progress bar loading ini bukannya nambah 0 ke 100%, malah dari 100% mundur ke -50%.\n\nDOM Elements:\n- `<progress id='loading-bar' value='100' max='100'>` — progress bar (harus diubah value-nya mundur ke bawah 0)",
+      "html_blueprint": "<div class='sandbox-container'><progress id='loading-bar' value='100' max='100'></progress></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin loadingnya depresi\n}",
+      "test_cases": [{"check_logic": "progress_value_decreases_below_zero", "error_msg": "Test Failed: Progressnya maju bang, salah konsep.", "success_msg": "Test Pass: Kemunduran teknologi tercapai."}]
+    },
+    {
+      "id": 14,
+      "title": "Font Size Pelit",
+      "explanation": "Setiap kali user ngetik 1 huruf di textarea ini, kurangi ukuran font-nya 1px sampai gak kelihatan sama sekali.\n\nDOM Elements:\n- `<textarea id='stingy-text' style='font-size:20px;'>` — textarea (font-size default: 20px, harus dikurangi tiap input)",
+      "html_blueprint": "<div class='sandbox-container'><textarea id='stingy-text' style='font-size:20px;'></textarea></div>",
+      "initial_code": "function startChallenge() {\n  // Makin panjang makin kecil\n}",
+      "test_cases": [{"check_logic": "font_size_decreases_on_input", "error_msg": "Test Failed: Tulisannya masih segede gaban bang.", "success_msg": "Test Pass: Teks berhasil jadi bakteri."}]
+    },
+    {
+      "id": 15,
+      "title": "Opacity Slider Nyasar",
+      "explanation": "Slider ini bilangnya buat volume, tapi logicnya malah ngubah opacity (transparansi) seluruh tag body website.\n\nDOM Elements:\n- `<input type='range' id='fake-vol' min='0' max='100' value='100'>` — slider 'palsu' (ubah document.body.style.opacity)",
+      "html_blueprint": "<div class='sandbox-container'><label>Volume</label><input type='range' id='fake-vol' min='0' max='100' value='100'></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin webnya transparan\n}",
+      "test_cases": [{"check_logic": "body_opacity_changes", "error_msg": "Test Failed: Webnya masih kelihatan jelas bang.", "success_msg": "Test Pass: Layar sukses menghilang."}]
+    },
+    {
+      "id": 16,
+      "title": "Kursor Terbalik",
+      "explanation": "Setiap mouse digerakkan ke kanan, geser elemen 'kursor palsu' ke kiri. Kalau ke atas, geser ke bawah.\n\nDOM Elements:\n- `<div id='mouse-arena' style='height:300px; position:relative;'>` — area pergerakan mouse\n- `<div id='fake-cursor' style='width:10px; height:10px; background:red; position:absolute;'>` — kursor palsu yang harus digeser terbalik",
+      "html_blueprint": "<div class='sandbox-container' id='mouse-arena' style='height:300px; position:relative;'><div id='fake-cursor' style='width:10px; height:10px; background:red; position:absolute;'></div></div>",
+      "initial_code": "function startChallenge() {\n  // Balikin koordinat X dan Y\n}",
+      "test_cases": [{"check_logic": "inverse_coordinates", "error_msg": "Test Failed: Kursornya masih nurut sama mouse, kurang liar.", "success_msg": "Test Pass: Otak user sukses korslet."}]
+    },
+    {
+      "id": 17,
+      "title": "Keyboard Mabuk",
+      "explanation": "User ngetik huruf 'A' keluarnya 'Z'. Acak semua input keyboard dengan huruf random.\n\nDOM Elements:\n- `<input type='text' id='drunk-input'>` — text input (tangkap keydown, ganti value-nya ke huruf random)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='drunk-input'></div>",
+      "initial_code": "function startChallenge() {\n  // Cegat event keydown, ganti valuenya\n}",
+      "test_cases": [{"check_logic": "input_is_randomized", "error_msg": "Test Failed: Ngetik A keluarnya A, ga asik.", "success_msg": "Test Pass: Enkripsi level orang mabuk berhasil."}]
+    },
+    {
+      "id": 18,
+      "title": "Modal Butuh Pujian",
+      "explanation": "Tombol close (X) di modal ini ga bisa diklik. Modal baru mau ketutup kalau user ngetik 'Kamu ganteng' di input box-nya.\n\nDOM Elements:\n- `<div id='modal'>` — modal container\n- `<input type='text' id='compliment'>` — input untuk ngetik pujian\n- `<button id='close-modal'>X</button>` — tombol close (harus dicek input-nya dulu)",
+      "html_blueprint": "<div class='sandbox-container'><div id='modal'>Puji aku dulu<br><input type='text' id='compliment'><button id='close-modal'>X</button></div></div>",
+      "initial_code": "function startChallenge() {\n  // Validasi pujian\n}",
+      "test_cases": [{"check_logic": "closes_only_on_compliment", "error_msg": "Test Failed: Modal bisa ditutup tanpa dipuji, developer sakit hati.", "success_msg": "Test Pass: Ego developer terselamatkan."}]
+    },
+    {
+      "id": 19,
+      "title": "Password Hieroglif",
+      "explanation": "Validasi password: Harus minimal 8 karakter, ada angka, ada huruf besar, dan WAJIB mengandung satu emoji unta 🐪.\n\nDOM Elements:\n- `<input type='password' id='camel-pass'>` — field password\n- `<button id='check-pass'>Check</button>` — tombol validasi",
+      "html_blueprint": "<div class='sandbox-container'><input type='password' id='camel-pass'><button id='check-pass'>Check</button></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin regex unta\n}",
+      "test_cases": [{"check_logic": "requires_camel_emoji", "error_msg": "Test Failed: Untanya ga ada bang, di gurun mana dia?", "success_msg": "Test Pass: Password aman terkendali bersama unta."}]
+    },
+    {
+      "id": 20,
+      "title": "Scroll Horizontal ke Vertikal",
+      "explanation": "Ketika user menggunakan scroll wheel mouse (vertikal), paksa halaman buat scroll ke kanan (horizontal) sebagai gantinya.\n\nDOM Elements:\n- `<div style='width:2000px; height:2000px;'>` — container besar (tangkap event wheel, cegah scrollY, pakai scrollLeft)",
+      "html_blueprint": "<div class='sandbox-container' style='width:2000px; height:2000px;'>Scroll me if you can.</div>",
+      "initial_code": "function startChallenge() {\n  // Cegat event wheel\n}",
+      "test_cases": [{"check_logic": "scroll_x_instead_of_y", "error_msg": "Test Failed: Scrollnya normal bang, bosen.", "success_msg": "Test Pass: Navigasi sukses dibikin ribet."}]
+    },
+    {
+      "id": 21,
+      "title": "Checkbox 10 Detik",
+      "explanation": "Checkbox ini baru bisa tercentang kalau mouse ditekan (mousedown) dan TAHAN selama persis 10 detik tanpa dilepas.\n\nDOM Elements:\n- `<input type='checkbox' id='hold-check'>` — checkbox (centang paksa via mousedown timer, batalkan kalau mouseup sebelum 10 detik)",
+      "html_blueprint": "<div class='sandbox-container'><input type='checkbox' id='hold-check'> Hold to Check</div>",
+      "initial_code": "function startChallenge() {\n  // Pakai setTimeout di mousedown\n}",
+      "test_cases": [{"check_logic": "requires_10s_hold", "error_msg": "Test Failed: Sekali klik langsung kecentang, kurang nyiksa.", "success_msg": "Test Pass: Kesabaran user setara dewa."}]
+    },
+    {
+      "id": 22,
+      "title": "Gambar Blur Pelupa",
+      "explanation": "Makin lama user hover (mouse ditaruh di atas) gambar ini, gambarnya makin nge-blur sampai ga kelihatan.\n\nDOM Elements:\n- `<img id='blur-img' src='https://via.placeholder.com/150'>` — gambar (tambah filter blur via mouseenter/mouseleave + setInterval)",
+      "html_blueprint": "<div class='sandbox-container'><img id='blur-img' src='https://via.placeholder.com/150' alt='Meme'></div>",
+      "initial_code": "function startChallenge() {\n  // Tambah filter blur berdasar waktu hover\n}",
+      "test_cases": [{"check_logic": "blur_increases_on_hover", "error_msg": "Test Failed: Gambarnya tetep HD bang, mata gw ga minus.", "success_msg": "Test Pass: Gambar sukses disensor alam."}]
+    },
+    {
+      "id": 23,
+      "title": "Volume Decibel Ketik",
+      "explanation": "Gak ada slider. User harus masukin volume dengan ngetik angka exact frequency decibel-nya di text input.\n\nDOM Elements:\n- `<input type='number' id='db-vol'>` — input number untuk decibel",
+      "html_blueprint": "<div class='sandbox-container'><label>Volume (dB):</label><input type='number' id='db-vol'></div>",
+      "initial_code": "function startChallenge() {\n  // Volume normal = input db yang rumit\n}",
+      "test_cases": [{"check_logic": "uses_db_logic", "error_msg": "Test Failed: Logikanya terlalu gampang buat user normal.", "success_msg": "Test Pass: Audiophile approved."}]
+    },
+    {
+      "id": 24,
+      "title": "Form Miring",
+      "explanation": "Setiap user ngetik 1 huruf, seluruh form login akan miring (rotate) 1 derajat.\n\nDOM Elements:\n- `<div id='spin-form'>` — container form (ubah transform: rotate)\n- `<input type='text' placeholder='Username'>` — input di dalam form (tangkap event oninput)",
+      "html_blueprint": "<div class='sandbox-container' id='spin-form'><input type='text' placeholder='Username'></div>",
+      "initial_code": "function startChallenge() {\n  // Puter formnya\n}",
+      "test_cases": [{"check_logic": "form_rotates_on_input", "error_msg": "Test Failed: Formnya masih tegak lurus bang.", "success_msg": "Test Pass: UI sukses bikin leher patah."}]
+    },
+    {
+      "id": 25,
+      "title": "Radio Button Serakah",
+      "explanation": "Radio button biasanya cuma bisa pilih satu. Bikin logic biar radio button ini malah kecentang semua kalau diklik salah satu.\n\nDOM Elements:\n- `<input type='radio' name='gender' class='greedy-radio'>` — radio Pria\n- `<input type='radio' name='gender' class='greedy-radio'>` — radio Wanita\n- Selector: `document.querySelectorAll('.greedy-radio')`",
+      "html_blueprint": "<div class='sandbox-container'><input type='radio' name='gender' class='greedy-radio'> Pria <input type='radio' name='gender' class='greedy-radio'> Wanita</div>",
+      "initial_code": "function startChallenge() {\n  // Hilangkan eksklusivitas radio\n}",
+      "test_cases": [{"check_logic": "all_radios_checked", "error_msg": "Test Failed: Masih bisa pilih satu doang bang.", "success_msg": "Test Pass: Kenapa pilih satu kalau bisa semua?"}]
+    },
+    {
+      "id": 26,
+      "title": "Date Picker Masa Lalu",
+      "explanation": "Kalender date picker ini gak bisa milih tahun selain tahun 1999. Kalau user milih 2024, paksa balik ke 1999.\n\nDOM Elements:\n- `<input type='date' id='y2k-date'>` — date picker (tangkap onchange, paksa value ke tahun 1999)",
+      "html_blueprint": "<div class='sandbox-container'><input type='date' id='y2k-date'></div>",
+      "initial_code": "function startChallenge() {\n  // Nostalgia paksa\n}",
+      "test_cases": [{"check_logic": "forces_year_1999", "error_msg": "Test Failed: Bisa milih masa depan bang, kiamat Y2K belum lewat!", "success_msg": "Test Pass: Welcome to 1999."}]
+    },
+    {
+      "id": 27,
+      "title": "Tombol Polyglot",
+      "explanation": "Setiap diklik, text di tombol ini berubah ke bahasa random (Jepang, Rusia, Arab, dll) tapi fungsinya ga jalan.\n\nDOM Elements:\n- `<button id='lang-btn'>` — tombol (text berubah-ubah ke bahasa random tiap diklik)",
+      "html_blueprint": "<div class='sandbox-container'><button id='lang-btn'>Submit</button></div>",
+      "initial_code": "function startChallenge() {\n  // Array bahasa dan randomizer\n}",
+      "test_cases": [{"check_logic": "button_text_changes_language", "error_msg": "Test Failed: Bahasanya masih bisa dibaca bang.", "success_msg": "Test Pass: Mr. Worldwide!"}]
+    },
+    {
+      "id": 28,
+      "title": "CAPTCHA Anjing",
+      "explanation": "User harus ngetik 'guk guk' pake voice recognition. Karena ini sandbox, bikin aja input box yang wajib isinya 'guk guk'.\n\nDOM Elements:\n- `<input type='text' id='dog-captcha'>` — text input (validasi harus == 'guk guk')",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='dog-captcha' placeholder='Buktekkan anda anjing'></div>",
+      "initial_code": "function startChallenge() {\n  // Validasi gonggongan\n}",
+      "test_cases": [{"check_logic": "requires_guk_guk", "error_msg": "Test Failed: User masih manusia bang.", "success_msg": "Test Pass: Good boy!"}]
+    },
+    {
+      "id": 29,
+      "title": "Form Out of Bounds",
+      "explanation": "Tombol submit di form ini cuma bisa diklik kalau posisi kursor mouse ada di LUAR jendela browser (deteksi mouseleave).\n\nDOM Elements:\n- `<button id='oob-submit'>Kirim</button>` — tombol submit (tangkap mouseleave di document, baru trigger action)",
+      "html_blueprint": "<div class='sandbox-container'><button id='oob-submit'>Kirim</button></div>",
+      "initial_code": "function startChallenge() {\n  // Gabungin event mouseleave browser dan klik\n}",
+      "test_cases": [{"check_logic": "submits_on_mouseleave", "error_msg": "Test Failed: Masih bisa diklik di dalam layar bang.", "success_msg": "Test Pass: Logic out of the box (literally)."}]
+    },
+    {
+      "id": 30,
+      "title": "Undo yang Redo",
+      "explanation": "Bikin tombol 'Hapus' yang kalau diklik bukannya ngehapus teks, tapi malah ngegandain (duplicate) teks yang ada.\n\nDOM Elements:\n- `<input type='text' id='dupe-text' value='Halo '>` — input text\n- `<button id='fake-del'>` — tombol 'Hapus' (malah menduplikat teks)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='dupe-text' value='Halo '><button id='fake-del'>Hapus</button></div>",
+      "initial_code": "function startChallenge() {\n  // Gandakan masalah\n}",
+      "test_cases": [{"check_logic": "text_doubles_on_delete", "error_msg": "Test Failed: Teksnya malah kehapus beneran bang.", "success_msg": "Test Pass: CTRL+Z menangis."}]
+    },
+    {
+      "id": 31,
+      "title": "Password Weak AF",
+      "explanation": "Bikin password strength meter yang sekuat apapun password-nya (pakai simbol dll), indikatornya tetep bilang 'Sangat Lemah'.\n\nDOM Elements:\n- `<input type='password' id='str-pass'>` — password input\n- `<p id='str-meter'>Kekuatan: </p>` — indikator strength (harus selalu tampilkan 'Sangat Lemah')",
+      "html_blueprint": "<div class='sandbox-container'><input type='password' id='str-pass'><p id='str-meter'>Kekuatan: </p></div>",
+      "initial_code": "function startChallenge() {\n  // Jatuhkan mental user\n}",
+      "test_cases": [{"check_logic": "always_weak", "error_msg": "Test Failed: Passwordnya dinilai kuat, padahal user itu lemah.", "success_msg": "Test Pass: Mental damage +100."}]
+    },
+    {
+      "id": 32,
+      "title": "Link Tanya Terus",
+      "explanation": "Kalau link ini diklik, dia bakal ngeluarin alert('Are you sure?') sebanyak 10 kali pake loop sebelum akhirnya error.\n\nDOM Elements:\n- `<a href='#' id='annoying-link'>` — link (onclick, spam alert 10x pakai loop)",
+      "html_blueprint": "<div class='sandbox-container'><a href='#' id='annoying-link'>Klik Saya</a></div>",
+      "initial_code": "function startChallenge() {\n  // Spam alert 10 kali\n}",
+      "test_cases": [{"check_logic": "has_alert_loop", "error_msg": "Test Failed: Linknya langsung jalan bang, ga seru.", "success_msg": "Test Pass: User nyesel ngeklik."}]
+    },
+    {
+      "id": 33,
+      "title": "Search Google Nyasar",
+      "explanation": "Bikin search bar website yang kalau dienter, malah redirect buka Google pencarian resep seblak, bukan nyari di web lokal.\n\nDOM Elements:\n- `<input type='text' id='search-nyasar'>` — search input (tangkap keydown Enter, redirect ke Google search seblak)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='search-nyasar' placeholder='Cari artikel...'></div>",
+      "initial_code": "function startChallenge() {\n  // Redirect ke seblak\n}",
+      "test_cases": [{"check_logic": "redirects_to_seblak", "error_msg": "Test Failed: Search-nya lurus-lurus aja bang.", "success_msg": "Test Pass: Laper bang?."}]
+    },
+    {
+      "id": 34,
+      "title": "Chatbot Pasrah",
+      "explanation": "Bikin bot balasan otomatis. Apapun yang diketik user, balasan bot-nya cuma div delay 1 detik lalu muncul 'Au ah gelap'.\n\nDOM Elements:\n- `<input type='text' id='chat-input'>` — input chat user\n- `<div id='chat-reply'>` — area balasan bot (tampilkan 'Au ah gelap' dengan setTimeout 1 detik)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='chat-input'><div id='chat-reply'></div></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin botnya males\n}",
+      "test_cases": [{"check_logic": "always_replies_au_ah", "error_msg": "Test Failed: Bot lu terlalu pinter bang.", "success_msg": "Test Pass: AI paling jujur abad ini."}]
+    },
+    {
+      "id": 35,
+      "title": "Logout Roulette",
+      "explanation": "Tombol Logout ini bukannya ngeluarin user, tapi malah ngacak nama profile jadi nama orang random (misal: Bambang, Siti).\n\nDOM Elements:\n- `<h3 id='profile-name'>User123</h3>` — nama profile (ganti textContent ke nama random)\n- `<button id='logout-btn'>Logout</button>` — tombol logout (ganti nama, bukan logout)",
+      "html_blueprint": "<div class='sandbox-container'><h3 id='profile-name'>User123</h3><button id='logout-btn'>Logout</button></div>",
+      "initial_code": "function startChallenge() {\n  // Ganti identitas\n}",
+      "test_cases": [{"check_logic": "changes_name_on_logout", "error_msg": "Test Failed: User beneran logout bang, kita kehilangan DAU!", "success_msg": "Test Pass: Identity theft is not a joke."}]
+    },
+    {
+      "id": 36,
+      "title": "Tombol Pingpong",
+      "explanation": "Ada dua tombol Submit. Kalau kursor deket tombol 1, tombol 1 mati, tombol 2 idup. Kalau deket tombol 2, gantian. Terus aja gitu.\n\nDOM Elements:\n- `<button id='btn-ping'>Submit A</button>` — tombol A (toggle disabled pas hover)\n- `<button id='btn-pong' disabled>Submit B</button>` — tombol B (default disabled)",
+      "html_blueprint": "<div class='sandbox-container'><button id='btn-ping'>Submit A</button> <button id='btn-pong' disabled>Submit B</button></div>",
+      "initial_code": "function startChallenge() {\n  // Bikin logika toggle disable on hover\n}",
+      "test_cases": [{"check_logic": "buttons_toggle_disabled", "error_msg": "Test Failed: Tombolnya gampang diklik bang.", "success_msg": "Test Pass: User main pingpong kursor."}]
+    },
+    {
+      "id": 37,
+      "title": "Jam Berdetak 2x Lipat",
+      "explanation": "Bikin jam digital sederhana di layar, tapi detikannya jalan dua kali lebih cepat dari dunia nyata.\n\nDOM Elements:\n- `<h2 id='fast-clock'>00:00:00</h2>` — tampilan jam (update textContent pakai setInterval 500ms, bukan 1000ms)",
+      "html_blueprint": "<div class='sandbox-container'><h2 id='fast-clock'>00:00:00</h2></div>",
+      "initial_code": "function startChallenge() {\n  // Manipulasi waktu dengan setInterval 500ms\n}",
+      "test_cases": [{"check_logic": "interval_is_500ms", "error_msg": "Test Failed: Jam lu normal bang, kurang memacu adrenalin.", "success_msg": "Test Pass: Waktu adalah ilusi."}]
+    },
+    {
+      "id": 38,
+      "title": "Notifikasi Posesif",
+      "explanation": "Kalau user klik sembarang tempat di luar notifikasi box, notifikasinya nambah gede ukurannya 10%.\n\nDOM Elements:\n- `<div id='noti-box' style='width:100px; background:yellow;'>` — notifikasi box (tambah lebar 10% tiap klik di luar)",
+      "html_blueprint": "<div class='sandbox-container'><div id='noti-box' style='width:100px; background:yellow;'>Perhatikan aku!</div></div>",
+      "initial_code": "function startChallenge() {\n  // Window onclick -> noti-box width += 10%\n}",
+      "test_cases": [{"check_logic": "grows_on_outside_click", "error_msg": "Test Failed: Notifikasinya kurang caper bang.", "success_msg": "Test Pass: Perhatian berhasil diraih paksa."}]
+    },
+    {
+      "id": 39,
+      "title": "Copy Paste Terbalik",
+      "explanation": "Kalau user mencoba CTRL+V (paste) di text area ini, teks yang dipaste urutan hurufnya dibalik (reverse string).\n\nDOM Elements:\n- `<textarea id='reverse-paste'>` — textarea (tangkap event onpaste, reverse string, set ke value)",
+      "html_blueprint": "<div class='sandbox-container'><textarea id='reverse-paste'></textarea></div>",
+      "initial_code": "function startChallenge() {\n  // Tangkap event paste, reverse stringnya\n}",
+      "test_cases": [{"check_logic": "pastes_reversed_text", "error_msg": "Test Failed: Pastenya normal bang, plagiat gampang ini mah.", "success_msg": "Test Pass: Anti copas club."}]
+    },
+    {
+      "id": 40,
+      "title": "Baterai Nyedot",
+      "explanation": "Slider volume ini kalau dinaikin, bakal nurunin height dari icon div baterai di sebelahnya seolah nyedot daya.\n\nDOM Elements:\n- `<input type='range' id='vol-sucker'>` — slider volume\n- `<div id='battery' style='height:100px; width:50px; background:green;'>` — icon baterai (kurangi height sesuai slider value)",
+      "html_blueprint": "<div class='sandbox-container'><input type='range' id='vol-sucker'><div id='battery' style='height:100px; width:50px; background:green;'></div></div>",
+      "initial_code": "function startChallenge() {\n  // Sinkronkan slider dan height\n}",
+      "test_cases": [{"check_logic": "battery_drains_on_vol_up", "error_msg": "Test Failed: Baterainya hemat bang, ga realistis.", "success_msg": "Test Pass: Energi sukses dihamburkan."}]
+    },
+    {
+      "id": 41,
+      "title": "Dropdown Main Petak Umpet",
+      "explanation": "Saat dropdown select diklik, option list-nya munculnya di koordinat random di layar, bukan di bawah tag select-nya.\n\nDOM Elements:\n- `<select id='hide-seek-drop'>` — select dropdown\n- `<option>Satu</option>`, `<option>Dua</option>` — isi option",
+      "html_blueprint": "<div class='sandbox-container'><select id='hide-seek-drop'><option>Satu</option><option>Dua</option></select></div>",
+      "initial_code": "function startChallenge() {\n  // Acak position: absolute saat dropdown open\n}",
+      "test_cases": [{"check_logic": "options_rendered_randomly", "error_msg": "Test Failed: Dropdownnya nurut bang.", "success_msg": "Test Pass: Main petak umpet dimulai."}]
+    },
+    {
+      "id": 42,
+      "title": "Warna Random Tiap Ketik",
+      "explanation": "Tiap user ngetik satu huruf di input ini, ubah warna background halamannya secara acak pake kode hex.\n\nDOM Elements:\n- `<input type='text' id='rave-input'>` — text input (tangkap oninput, set document.body.style.backgroundColor ke random hex)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='rave-input'></div>",
+      "initial_code": "function startChallenge() {\n  // Event input -> random hex body background\n}",
+      "test_cases": [{"check_logic": "bg_changes_on_input", "error_msg": "Test Failed: Layarnya ga kelap-kelip bang.", "success_msg": "Test Pass: Epilepsi warning."}]
+    },
+    {
+      "id": 43,
+      "title": "Scroll Teriak",
+      "explanation": "Setiap kali user melakukan scroll ke bawah, ubah teks h1 di halaman jadi makin banyak huruf 'A'-nya (Contoh: A, AA, AAA...).\n\nDOM Elements:\n- `<h1 id='scream-text' style='position:fixed;'>A</h1>` — teks teriakan (tambah 'A' tiap scroll event)",
+      "html_blueprint": "<div class='sandbox-container' style='height:200vh;'><h1 id='scream-text' style='position:fixed;'>A</h1></div>",
+      "initial_code": "function startChallenge() {\n  // Window onscroll -> tambah 'A'\n}",
+      "test_cases": [{"check_logic": "text_appends_A_on_scroll", "error_msg": "Test Failed: Webnya pendiam bang.", "success_msg": "Test Pass: AAAAAAAAAA."}]
+    },
+    {
+      "id": 44,
+      "title": "Tombol Licin",
+      "explanation": "Bikin tombol yang kalau diklik, ada delay 2 detik baru function kliknya jalan. Kayak ngelag disengaja.\n\nDOM Elements:\n- `<button id='lag-btn'>` — tombol (onclick, pakai setTimeout 2000ms sebelum action jalan)",
+      "html_blueprint": "<div class='sandbox-container'><button id='lag-btn'>Klik Aku</button></div>",
+      "initial_code": "function startChallenge() {\n  // Tambahin setTimeout di onclick\n}",
+      "test_cases": [{"check_logic": "click_has_delay", "error_msg": "Test Failed: Tombolnya terlalu responsif bang, kayak server Google.", "success_msg": "Test Pass: Server potato simulation."}]
+    },
+    {
+      "id": 45,
+      "title": "Misi Rahasia",
+      "explanation": "Untuk submit form, user ga ngeklik tombol. User harus ngetik rahasia (konami code): Atas, Atas, Bawah, Bawah di keyboard.\n\nDOM Elements:\n- `<p id='secret-status'>Form Belum Submit</p>` — status (ubah text kalau konami code benar)\n- Tangkap keydown: ArrowUp, ArrowUp, ArrowDown, ArrowDown",
+      "html_blueprint": "<div class='sandbox-container'><p id='secret-status'>Form Belum Submit</p></div>",
+      "initial_code": "function startChallenge() {\n  // Tangkap keydown array konami code\n}",
+      "test_cases": [{"check_logic": "requires_konami_code", "error_msg": "Test Failed: Disubmit pakai cara biasa bang, kurang elit.", "success_msg": "Test Pass: Cheat code activated."}]
+    },
+    {
+      "id": 46,
+      "title": "Audio Tanpa Suara",
+      "explanation": "Bikin tag audio kontrol yang kalau volume digeser ke max (100%), justru suaranya di-mute (volume = 0).\n\nDOM Elements:\n- `<audio id='troll-audio' controls></audio>` — audio element (tangkap onvolumechange, balik logika: max → mute)",
+      "html_blueprint": "<div class='sandbox-container'><audio id='troll-audio' controls></audio></div>",
+      "initial_code": "function startChallenge() {\n  // Balik logika volume control\n}",
+      "test_cases": [{"check_logic": "mute_on_max_volume", "error_msg": "Test Failed: Suaranya makin kenceng bang, budeg nih.", "success_msg": "Test Pass: Kesunyian adalah emas."}]
+    },
+    {
+      "id": 47,
+      "title": "Font Roulette",
+      "explanation": "Tiap kali user ngetik di text area, ubah font-family dari seluruh web secara random (Comic Sans, Impact, dll).\n\nDOM Elements:\n- `<textarea id='font-roulette'>` — textarea (tangkap oninput, ubah document.body.style.fontFamily ke random dari array font)",
+      "html_blueprint": "<div class='sandbox-container'><textarea id='font-roulette'></textarea></div>",
+      "initial_code": "function startChallenge() {\n  // Array fonts, apply on input\n}",
+      "test_cases": [{"check_logic": "font_changes_on_input", "error_msg": "Test Failed: Webnya terlalu rapi bang.", "success_msg": "Test Pass: Desainer UI menangis melihat ini."}]
+    },
+    {
+      "id": 48,
+      "title": "Validasi Angka Genap",
+      "explanation": "Input field ini cuma mau nerima angka genap. Kalau user ngetik angka ganjil, hapus angkanya dari input.\n\nDOM Elements:\n- `<input type='number' id='even-only'>` — input number (tangkap oninput, cek value % 2, hapus kalau ganjil)",
+      "html_blueprint": "<div class='sandbox-container'><input type='number' id='even-only'></div>",
+      "initial_code": "function startChallenge() {\n  // Cek value % 2\n}",
+      "test_cases": [{"check_logic": "removes_odd_numbers", "error_msg": "Test Failed: Angka ganjil tembus bang.", "success_msg": "Test Pass: Keadilan hanya untuk genap."}]
+    },
+    {
+      "id": 49,
+      "title": "Kaca Spion",
+      "explanation": "Teks yang diketik user di input box harus muncul terbalik dari kanan ke kiri (seperti ditulis dalam bahasa Arab) menggunakan trik CSS/JS.\n\nDOM Elements:\n- `<input type='text' id='mirror-input' style='direction:rtl;'>` — input RTL (set direction: rtl via style atau JS)",
+      "html_blueprint": "<div class='sandbox-container'><input type='text' id='mirror-input' style='direction:rtl;'></div>",
+      "initial_code": "function startChallenge() {\n  // Balik urutan ketik\n}",
+      "test_cases": [{"check_logic": "text_direction_rtl", "error_msg": "Test Failed: Teksnya masih dari kiri ke kanan bang.", "success_msg": "Test Pass: Mirror dimension unlocked."}]
+    },
+    {
+      "id": 50,
+      "title": "Tombol Kiamat",
+      "explanation": "Pas tombol ini diklik, hapus tag <head> dan tag <body> dari HTML sepenuhnya. Biarkan layarnya putih kosong.\n\nDOM Elements:\n- `<button id='doomsday-btn'>` — tombol kiamat (onclick, panggil document.body.remove())",
+      "html_blueprint": "<div class='sandbox-container'><button id='doomsday-btn'>Tekan Jangan</button></div>",
+      "initial_code": "function startChallenge() {\n  // document.body.remove()\n}",
+      "test_cases": [{"check_logic": "body_is_removed", "error_msg": "Test Failed: Webnya masih idup bang.", "success_msg": "Test Pass: Kiamat telah tiba, thanks for playing."}]
+    }
+  ],
+  "session": {
+    "current_score": 0,
+    "total_shots_fired": 0
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Aim & Brain - Gacha Coding Absurd</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/editor/editor.main.css" />
+  <script type="module" crossorigin src="/assets/index-RddL1RZT.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-qSUX8efY.css">
+</head>
+<body>
+  <div id="app">
+    <!-- PHASE 1: 3D SHOOTING RANGE -->
+    <div id="phase-lobby" class="phase active">
+      <canvas id="lobby-canvas"></canvas>
+
+      <!-- Crosshair (follows analog stick) -->
+      <div id="crosshair">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <circle cx="20" cy="20" r="14" fill="none" stroke="#ff3333" stroke-width="2" opacity="0.8"/>
+          <line x1="20" y1="2" x2="20" y2="14" stroke="#ff3333" stroke-width="2"/>
+          <line x1="20" y1="26" x2="20" y2="38" stroke="#ff3333" stroke-width="2"/>
+          <line x1="2" y1="20" x2="14" y2="20" stroke="#ff3333" stroke-width="2"/>
+          <line x1="26" y1="20" x2="38" y2="20" stroke="#ff3333" stroke-width="2"/>
+          <circle cx="20" cy="20" r="2" fill="#ff3333"/>
+        </svg>
+      </div>
+
+      <!-- HUD top -->
+      <div id="hud-top">
+        <div id="hud-shots">TEMBAKAN: <span id="shots-val">0</span>/4</div>
+        <div id="hud-score">SKOR: <span id="score-val">0</span></div>
+      </div>
+
+      <!-- Hit result popup -->
+      <div id="hit-popup" class="hidden">
+        <div id="hit-popup-icon"></div>
+        <p id="hit-popup-text"></p>
+      </div>
+
+      <!-- Analog + Shoot controller -->
+      <div id="controller">
+        <div id="analog-zone">
+          <div id="analog-base">
+            <div id="analog-stick"></div>
+          </div>
+        </div>
+        <div id="shoot-zone">
+          <button id="shoot-btn">FIRE</button>
+        </div>
+      </div>
+
+      <div id="lobby-hint">Arahkan &amp; tembak 4 target merah!</div>
+    </div>
+
+    <!-- PHASE 2: GACHA TRANSITION -->
+    <div id="phase-gacha" class="phase">
+      <div id="gacha-container">
+        <div id="gacha-spinner">
+          <div id="gacha-ring"></div>
+          <div id="gacha-text">GACHA!</div>
+        </div>
+        <div id="gacha-result" class="hidden">
+          <h2 id="gacha-title"></h2>
+          <p id="gacha-desc"></p>
+          <button id="gacha-start-btn">Mulai Challenge!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 & 4: CODING DASHBOARD -->
+    <div id="phase-dashboard" class="phase">
+      <div id="dashboard-grid">
+        <div id="sandbox-panel" class="panel">
+          <div class="panel-header">PREVIEW SANDBOX</div>
+          <div id="sandbox-container"></div>
+        </div>
+        <div id="explanation-panel" class="panel">
+          <div class="panel-header">CHALLENGE</div>
+          <div id="explanation-content"></div>
+        </div>
+        <div id="editor-panel" class="panel">
+          <div class="panel-header">CODE EDITOR</div>
+          <div id="monaco-container"></div>
+        </div>
+        <div id="terminal-panel" class="panel">
+          <div class="panel-header">TERMINAL</div>
+          <div id="terminal-output"></div>
+        </div>
+      </div>
+      <div id="dashboard-actions">
+        <button id="submit-btn" class="action-btn">SUBMIT CODE</button>
+        <button id="next-round-btn" class="action-btn hidden">NEXT ROUND</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+  <script>
+    require.config({ paths: { vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs' } });
+    window.MonacoEnvironment = {
+      getWorkerUrl: function() {
+        return "data:text/javascript;charset=utf-8," + encodeURIComponent(
+          'self.MonacoEnvironment = { baseUrl: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/" }; importScripts("https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/base/worker/workerMain.js");'
+        );
+      }
+    };
+  </script>
+</body>
+</html>
