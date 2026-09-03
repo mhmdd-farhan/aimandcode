@@ -381,6 +381,56 @@ html, body {
 
 #explanation-content .challenge-narrative { color: #aaa; }
 
+/* DOM Elements - prominent selector guide */
+.dom-elements {
+  margin-top: 14px;
+  background: rgba(0, 255, 136, 0.06);
+  border: 1px solid rgba(0, 255, 136, 0.35);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.dom-header {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #00ff88;
+  margin-bottom: 8px;
+}
+
+.dom-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 5px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.dom-item:last-child { border-bottom: none; }
+
+.dom-tag {
+  font-family: 'Consolas', 'Courier New', monospace;
+  background: #0d1a12;
+  color: #4dff88;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dom-id {
+  font-family: 'Consolas', monospace;
+  color: #ffd54f;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.dom-desc {
+  color: #9aa;
+  font-size: 12px;
+}
+
+
 #monaco-container { flex: 1; min-height: 0; }
 
 #terminal-output {

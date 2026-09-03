@@ -419,6 +419,57 @@ async function startGacha() {
 // ====================================================================
 //  PHASE 3 & 4: CODING DASHBOARD
 // ====================================================================
+// Render the explanation panel: separate the narrative from the
+// "DOM Elements:" list so users always see exactly which #id to select.
+function renderExplanation(challenge) {
+  const splitMark = 'DOM Elements:';
+  const idx = challenge.explanation.indexOf(splitMark);
+
+  let narrative = challenge.explanation;
+  let domSection = '';
+
+  if (idx !== -1) {
+    narrative = challenge.explanation.slice(0, idx).trim();
+    domSection = challenge.explanation.slice(idx + splitMark.length);
+  }
+
+  // Each line is a bullet of the form: - <tag id='x'>...</tag> — description
+  let domHtml = '';
+  if (domSection.trim()) {
+    const items = domSection
+      .split('\n')
+      .map(l => l.replace(/^[-•\s]+/, '').trim())
+      .filter(Boolean);
+
+    domHtml = `<div class="dom-elements">
+      <div class="dom-header">🎯 ELEMEN YANG HARUS DI-SELECT</div>`;
+    items.forEach(item => {
+      // Pull out the tag+id portion
+      const m = item.match(/(<[^>]+id='([^']+)'[^>]*>)/i);
+      let tagPart = item;
+      let desc = '';
+      if (m) {
+        tagPart = m[1];
+        desc = item.slice(m[0].length).replace(/^[—\-:\s]+/, '').trim();
+      }
+      // Extract the id for a friendly note
+      const idMatch = item.match(/id='([^']+)'/i);
+      const idLabel = idMatch ? `<span class="dom-id">→ #${idMatch[1]}</span>` : '';
+      domHtml += `<div class="dom-item">
+        <code class="dom-tag">${tagPart}</code>
+        ${idLabel}
+        ${desc ? `<span class="dom-desc">${desc}</span>` : ''}
+      </div>`;
+    });
+    domHtml += `</div>`;
+  }
+
+  return `
+    <div class="challenge-title">${challenge.title}</div>
+    <div class="challenge-narrative">${narrative}</div>
+    ${domHtml}
+  `;
+}
 function startDashboard() {
   showPhase('phase-dashboard');
 
@@ -426,10 +477,7 @@ function startDashboard() {
   document.getElementById('next-round-btn').classList.add('hidden');
   document.getElementById('submit-btn').classList.remove('hidden');
 
-  document.getElementById('explanation-content').innerHTML = `
-    <div class="challenge-title">${currentChallenge.title}</div>
-    <div class="challenge-narrative">${currentChallenge.explanation}</div>
-  `;
+  document.getElementById('explanation-content').innerHTML = renderExplanation(currentChallenge);
 
   document.getElementById('sandbox-container').innerHTML = currentChallenge.html_blueprint;
   initMonaco();
